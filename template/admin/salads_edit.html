@@ -1,0 +1,31 @@
+{% include 'admin/admin_navbar.html' %}
+
+<div  >
+<h1 style="text-align: center; text-decoration:underline; font-weight:bold;">Edit Salads</h1>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12">
+<form action="/update_salads/" method="post" >
+    {%csrf_token%}
+
+
+<input type="hidden" name="id" value="{{info.id}}"><br><br>
+<label for="">HEADING</label>
+<input type="text" name="edit_heading"  value="{{info.heading}}"  class="form-control"><br>
+<label for="">CAPTION</label>
+<input type="text" name="edit_discription"  class="form-control" value="{{info.caption}}" ><br>
+<label for="">RANGE</label>
+<input type="number" name="edit_range"   class="form-control" value="{{info.range}}"><br><br>
+
+   <button class="btn btn-success " style="width: 150px; height:50px; margin-left: 290px; border-radius:100px;"  onclick="editing()">submit</button>
+</form></div>
+</div>
+</div>
+</div>
+
+
+
+

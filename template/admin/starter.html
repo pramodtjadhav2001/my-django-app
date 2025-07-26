@@ -1,0 +1,70 @@
+{% include 'admin/admin_navbar.html' %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-8">
+            
+
+            <h1 style="text-decoration: underline; text-align: center;">STARTER PAGE </h1><br><br>
+
+    <form action="/save_starter/" method="post">
+
+        {% csrf_token %}
+
+        <label  >Heading</label>
+        <input type="text" name="heading" class="form-control"><br>
+
+        
+        <label >Discription</label>
+        <input type="text" name="discription" class="form-control"><br>
+
+
+        <label >Range</label>
+        <input type="number" name="range" class="form-control" ><br><br>
+
+
+        <button class="btn btn-success  btn-lg" style="margin-left: 320px;" onclick="Showalert()" >submit</button>
+
+    </form>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container-fluid">
+
+
+
+<table border="1" width="100%"  >
+    <tr style="text-align: center;">
+        <th>Delete</th>
+        <th>Edit</th>
+        <th>S.N</th>
+        <th>HEADING</th>
+        <th>DISCRIPTION</th>
+        <th>RANGE</th>
+    </tr>
+
+{% for i in st_data %}
+    <tr>
+        <td><a href="/delete_stater?id={{i.id}}"  ><button class="btn btn-danger  btn-sm"  style="margin:5px;" onclick="deletee()">Delete</button></a></th>
+        <td><a href="/edit_starter?id={{i.id}}"  style="margin:5px;"><button class="btn btn-success btn-sm ">EDIT</button></a></td>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.heading}}</td>
+        <td>{{i.caption}}</td>
+        <td>{{i.range}}</td>
+    </td>
+    {%endfor%}
+</table>
+</div>
+
+
+

@@ -1,0 +1,79 @@
+{% include  "admin/admin_navbar.html"%}
+
+<h1>  contact infomation  Information</h1>
+
+{% for i in ci_data%}
+<form action="/save_admin_contact/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<div  class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-8 col-lg-8">
+
+<label for="">image</label>
+<input type="file" class="form-control" name="img" value="{{i.image}}"  >
+
+<img src="/{{i.image}}" style="height: 100px;"><br><br>
+
+<label for="">heading</label>
+<input type="text"  id="" class="form-control" name="heading"  value="{{i.heading}}"><br><br>
+
+
+
+<label for="">caption1</label>
+<input type="text"  id="" class="form-control" name="caption1"  value="{{i.caption1}}"><br><br>
+
+
+<label for="">caption2</label>
+<input type="text"  id="" class="form-control" name="caption2"  value="{{i.caption2}}"><br><br>
+
+
+<label for="">caption3</label>
+<input type="text"  id="" class="form-control" name="caption3"  value="{{i.cpation3}}"><br><br>
+
+
+
+
+<button class="btn btn-success "  onclick="Showalert()" style="margin-left: 280px;">submit</button>
+</div>
+</div></div>
+</form><br><br>{%endfor%}
+
+
+
+
+
+
+
+<div  class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-8 col-lg-12">
+
+
+
+<table width="100%" border="1"  style="margin-left: -30px;" >
+    <tr>
+        <th>SN</th>
+        <th>IMAGE</th>
+        <th>HEADING</th>
+        <th>CAPTION1</th>
+        <th>CAPTION2</th>
+        <th>CAPTION3</th>
+    </tr>
+    {% for i in ci_data%}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td><img src="/{{i.image}}" style="height: 100px;"></td>
+        <td>{{i.heading}}</td>
+        <td>{{i.caption1}}</td>
+        <td>{{i.caption2}}</td>
+        <td >{{i.cpation3}}</td>
+       
+    </tr>
+    {%endfor%}
+</table>
+</div></div></div>
+
+
+<style>
+    
+</style>

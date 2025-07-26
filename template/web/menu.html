@@ -1,0 +1,70 @@
+{% include 'web/navbar.html' %}
+
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+    <div class="w3-content">
+    
+      <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
+      <div class="w3-row w3-center w3-border w3-border-dark-grey">
+        <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+          <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
+        </a>
+        <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+          <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Salads</div>
+        </a>
+        <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+          <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Starter</div>
+        </a>
+      </div>
+
+
+
+  
+      <div id="Pizza" class="w3-container menu w3-padding-32 w3-white">
+        {% for i in p_data %}
+        <h1><b>{{i.heading}}</b> 
+          <span class="w3-right w3-tag w3-dark-grey w3-round">${{i.range}}</span></h1>
+        <p class="w3-text-grey">{{i.caption}}</p>
+        <hr>
+        {%endfor%}
+
+      </div>
+    
+
+
+       
+      
+
+
+
+
+  
+      <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+        {% for i in s_data %}
+        <h1><b>{{i.heading}}</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">${{i.range}}</span></h1>
+        <p class="w3-text-grey">{{i.caption}}</p>
+        <hr>
+        {%endfor%}
+      </div>
+  
+  
+
+
+
+
+      <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
+        {% for i in st_data %}
+        <h1><b>{{i.heading}}</b> <span class="w3-tag w3-grey w3-round">Seasonal</span><span class="w3-right w3-tag w3-dark-grey w3-round">${{i.range}}</span></h1>
+        <p class="w3-text-grey">{{i.caption}}</p>        <hr>
+        {%endfor%} 
+      </div><br>
+  
+    </div>
+  </div>
+  
+  
+  
+
+
+{% include 'web/footer.html'%}

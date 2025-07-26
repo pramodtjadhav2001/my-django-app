@@ -1,0 +1,42 @@
+{% include 'web/navbar.html' %}
+
+<!-- About Container -->
+<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+    <div class="w3-content">
+      <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">{{a_data.heading}}</h1>
+      <p>{{a_data.caption1}}</p>
+      <p><strong>{{a_data.caption2}}</strong> <img src="/static/img/w3.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+      <p>{{a_data.caption3}}</p>
+      <img src="/{{a_data.image}}" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <h1><b>Opening Hours</b></h1>
+      
+      <div class="w3-row">
+        <div class="w3-col s6">
+          <p>Mon    :{{D_data.monday1}} --{{D_data.monday2}} </p>
+          <p> Tuesday  :{{D_data.tuesday1}} -- {{D_data.tuesday2}}</p>
+          <p>Wednesday   {{D_data.wednesday1}}--{{D_data.wednesday2}}</p>
+         
+        </div>
+        <div class="w3-col s6">
+          <p>Thursday : {{D_data.thurday1}} --{{D_data.thurday2}}</p>
+          <p>Friday : {{D_data.friday1}} --{{D_data.friday2}}</p>
+          <p>Saturday : {{D_data.saturday1}} --{{D_data.saturday2}}</p>
+          
+          <p style="margin-left:-220px; margin-top: -150px;">Sunday : {{D_data.sunday1}}--{{D_data.sunday2}}</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+{% include 'web/footer.html'%}

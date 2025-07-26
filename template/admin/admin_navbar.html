@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+
+    th{
+      text-align: center;
+    }
+    tr{
+      text-align: center;
+    }
+
+
+    td a{
+      padding: 5px;
+    }
+  </style>
+
+
+
+
+
+
+
+<!-- --------------boostrap 4.6 cdn-------------- -->
+
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h2 >Logo</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="/admin/admin">Dashboard</a></li>
+
+
+        
+
+        
+        
+        <li><a href="/admin/admin_home"> home</a></li>
+
+
+
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">menu <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/admin/pizza">pizza </a></li>
+            <li><a href="/admin/salads">Salads</a></li>
+            <li><a href="/admin/starter">starter</a></li>
+          </ul>
+        </li>
+        
+        
+        
+        
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">About <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/admin/about_info">About info</a></li>
+            <li><a href="/admin/day">Day</a></li>
+            
+          </ul>
+        </li>
+
+
+
+
+
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">contact <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/admin/c_info">contact infomation</a></li>
+            <li><a href="/admin/admin_contact">contact people</a></li>
+            
+          </ul>
+        </li>
+        
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">personal <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/admin/registraion">registration </a></li>
+            <li><a href="/login">Login</a></li>
+
+          </ul>
+        </li>
+        
+        
+        
+        
+      </ul>
+      
+      
+    </div>
+    <br>
+    
+
+
+    <script>
+      function Showalert(){
+          alert("information added Successfully")
+      }
+  </script>
+
+
+
+
+<script>
+  function deletee(){
+      alert ("are you sure  this infomation should delete")
+  }
+
+  function editing(){
+    alert("successfully  changed your infomation \n \tcheck now",)
+  }
+</script>

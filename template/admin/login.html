@@ -1,0 +1,80 @@
+
+    <style>
+       
+
+        form {
+            background-color: rgba(152, 152, 152, 0.451); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius:18px;
+            box-shadow: 0 0 10px rgba(90, 87, 87, 0.866);
+            width: 300px;
+        }
+
+        h3 {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+            
+           
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius:19px;
+            cursor: pointer;
+            margin-left: 80px;
+            width: 100px;
+        
+        }
+
+        /* Add some additional styling for a more appealing look */
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            margin-top: 110px;
+            margin-left: 470px;
+        }
+    </style>
+</head>
+<body style="background-image: url(/static/img/kk.jpg);">
+    
+    <form action="/admin/save_login/" method="post">
+        {% csrf_token %}
+        <h1>Welcome to Pizza Login</h1>
+        <h3 for="username">Username:</h3>
+        <input type="text" id="username" name="user_name" required>
+
+        <h3 for="password">Password:</h3>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" >Login</button>
+    </form>
+
+    {% if login_successful %}
+        <!-- JavaScript for successful login -->
+        <script>
+            alert("Login successful!");
+            // Redirect to the next page if needed
+           
+        </script>
+    {% else %}
+        <!-- JavaScript for failed login -->
+        <script>
+            alert("Login failed. Please check your username and password.");
+        </script>
+    {% endif %}
+
+   

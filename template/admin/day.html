@@ -1,0 +1,61 @@
+{% include "admin/admin_navbar.html"%}
+
+
+<h1 style="text-align: center; text-decoration: underline;">  Day Sechdule</h1>
+
+<table border="3" ></table>
+
+<div  class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-8 col-lg-8">
+{% for i in D_data %}
+<form action="/save_day/" method="post">
+    {%csrf_token%}
+          
+<label for="">heading</label>
+<input type="text" name="heading" id=""  class="form-control" >
+<br><br>
+
+<label for="">Sunday</label><br>
+<input type="time" name="Sunday1" id=""  value="{{i.sunday1}}"  >
+<input type="time" name="Sunday2" id=""  value={{i.sunday2}} >
+
+<br><br>
+
+<label for="">Monday</label><br>
+<input type="time" name="Monday1" id=""  value="{{i.monday1}}">
+<input type="time" name="Monday2" id=""  value="{{i.monday2}}"><br><br>
+
+<label for="">Tuesday</label><br>
+<input type="time" name="Tuesday1" id=""  value="{{i.tuesday1}}">
+<input type="time" name="Tuesday2" id=""  value="{{i.tuesday2}}"><br><br>
+
+<label for="">Wednesday</label><br>
+<input type="time" name="Wednesday1" id=""  value="{{i.wednesday1}}">
+<input type="time" name="Wednesday2" id=""  value="{{i.wednesday2}}"><br><br>
+
+<label for="">Thurday</label><br>
+<input type="time" name="Thurday1" id=""  value="{{i.thurday1}}">
+<input type="time" name="Thurday2" id=""  value="{{i.thurday2}}"><br><br>
+
+<label for="">Friday</label><br>
+<input type="time" name="Friday1" id=""  value="{{i.friday1}}">
+<input type="time" name="Friday2" id=""  value="{{i.friday2}}"><br><br>
+
+<label for="">Saturday</label><br>
+<input type="time" name="Saturday1" id=""  value="{{i.saturday1}}">
+<input type="time" name="Saturday2" id=""   value="{{i.saturday2}}"><br><br>
+  
+
+
+
+
+
+<button class="btn btn-success btn-lg" style="margin-left: 280px;"> Submit</button><br><br>
+</form>
+
+{%endfor%}
+</div>
+</div>
+</div>
+

@@ -1,0 +1,40 @@
+
+{% include 'admin/admin_navbar.html' %}
+
+
+<br>
+<div class="container ">
+    <div class="row">
+        <div class="col-lg-9 col-md-4">
+
+       
+
+
+<h1 style="text-align: center; text-decoration: underline;">contact people</h1><br>
+<table border="1" width="100%"     >
+    <tr>
+        <th>Delete</th>
+        <th>Edit</th>
+        <th>SN</th>
+        <th>Name</th>
+        <th>People</th>
+        <th>date and time</th>
+        <th>Message</th>
+    </tr>
+    {% for i in ac_data %}
+    <tr>
+        <td><a href="/delete_contact?id={{i.id}}" style="margin: 5px;"><button  type="button" class="btn btn-danger "  onclick="deletee()">delete</button></a></td>
+        <td ><a href="/edit_contact?id={{i.id}}"  style="margin: 5px;"><button class="btn btn-success    " >edit</button></a></td>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.people}}</td>
+        <td>{{i.date}}</td> 
+        <td>{{i.message}}</td>
+    </tr>
+    {%endfor%}
+</table>
+</div>
+</div>
+</div>
+
+

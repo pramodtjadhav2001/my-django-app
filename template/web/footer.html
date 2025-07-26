@@ -1,0 +1,35 @@
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a>
+    </p>
+    <div class="w3-hover-text-blue-gray" >
+    <i class="fa-brands fa-whatsapp f1"><a href=""></a></i>  
+     <i class="fa-brands fa-facebook f1" style="margin:15px;"></i>
+     <i class="fa-brands fa-instagram f1"></i>
+    
+     <i class="fa-brands fa-twitter f1"style="margin:15px;"></i>
+    </div>
+  </footer>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+you're welcome
+  <script>
+  // Tabbed Menu
+  function openMenu(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-red";
+  }
+  document.getElementById("myLink").click();
+  </script>
+  
+  </body>
+  </html>
+      

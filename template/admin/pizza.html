@@ -1,0 +1,72 @@
+{% include 'admin/admin_navbar.html' %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-8">
+            
+
+            <h1 style="text-decoration: underline; text-align: center;">pizza page</h1><br><br>
+
+    <form action="/save_pizza/" method="post">
+
+        {% csrf_token %}
+
+        <label  >Heading</label>
+        <input type="text" name="heading" class="form-control"><br>
+
+        
+        <label >Discription</label>
+        <input type="text" name="discription" class="form-control"><br>
+
+
+        <label >Range</label>
+        <input type="number" name="range" class="form-control" ><br><br>
+
+
+        <button class="btn btn-success  btn-lg" style="margin-left: 320px;" onclick="Showalert()" >submit</button><br><br><br>
+        
+
+        <h1 style="text-align: center; text-decoration: underline; margin-top: 15px;">PIZZA LIST</h1>
+
+    </form>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container-fluid">
+
+<table border="1" width="100%"  >
+    <tr style="text-align: center;">
+        <th>delete</th>
+        <th>edit</th>
+        <th>S.N</th>
+        <th>HEADING</th>
+        <th>DISCRIPTION</th>
+        <th>RANGE</th>
+    </tr>
+
+{% for i in p_data %}
+    <tr>
+        <td><a href="/delete_pizza?id={{i.id}}"    ><button class="btn btn-danger" onclick="deletee()" style="margin: 5px;">Delete</button></a></td>
+        <td><a href="/pizza_edit?id={{i.id}}"   ><button class="btn btn-success"   style="margin: 5px;" >EDIT</button></a></td>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.heading}}</td>
+        <td>{{i.caption}}</td>
+        <td>{{i.range}}</td>
+    </tr>
+    {%endfor%}
+</table>
+</div>
+
+
+

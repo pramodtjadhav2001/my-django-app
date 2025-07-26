@@ -1,0 +1,51 @@
+{% include  "admin/admin_navbar.html"%}
+
+<h1>  Home  Information</h1>
+
+
+{% for i in data %}
+<form action="/save_home/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<div  class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-8 col-lg-8">
+
+<label for="">image</label>
+<input type="file" class="form-control" name="img" value="{{i.image}}" ><br>
+
+
+
+<label for="">heading</label>
+<input type="text"  id="" class="form-control" name="heading"  value="{{i.heading}}"><br><br>
+
+
+<button class="btn btn-success "  onclick="Showalert()" style="margin-left: 280px;">submit</button>
+</div>
+</div></div>
+</form>
+{%endfor%}
+
+
+
+
+
+
+
+
+
+
+<table width="100%" border="1" style="text-align: center;">
+    <tr>
+        <th>SN</th>
+        <th>IMAGE</th>
+        <th>HEADING</th>
+    </tr>
+    {% for i in data%}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.heading}}</td>
+        <td><img src="/{{i.image}}" style="height: 100px;"></td>
+       
+    </tr>
+    {%endfor%}
+</table>

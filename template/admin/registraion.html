@@ -1,0 +1,56 @@
+
+{% include  "admin/admin_navbar.html"%}
+
+
+<h1 style="text-align: center; text-decoration: underline;">Registration page</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-md-12">
+
+{% for i in r_Data %}
+
+<form action="/save_admin_reg/" method="post">
+    {% csrf_token %}
+
+<label for="">Name</label>
+<input type="text" name="Name"  class="form-control"  value="{{i.name}}"><br>
+
+
+<label for="">Mobile</label>
+<input type="number" name="mobile"  class="form-control"  value="{{i.mobile}}"><br>
+
+<label for="">Email</label>
+<input type="email" name="email"  class="form-control"  value="{{i.email}}"><br>
+
+<label for="">Username</label>
+<input type="text" name="username"  class="form-control"  value="{{i.user_name}}"><br>
+<div>
+<label for="">Password</label>
+<input type="password" name="password" id="password" class="form-control"  value="{{i.password}}">
+<input type="checkbox" onclick="check()"> show password
+<script>
+    function check(){
+        var x = document.getElementById("password")
+        if(x.type ==="password"){
+           x.type = "text";
+        }
+        else {
+            x.type = 'password'
+
+        }
+    }
+</script>
+</div>
+
+<button class="btn btn-success" style="margin-left: 320px; width: 120px; border-radius: 100px; height: 40px;" onclick="
+editing()">Submit</button>
+
+
+
+
+</form>
+{%endfor%}
+</div>
+</div>
+</div>
